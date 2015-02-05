@@ -83,6 +83,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AudioFX
 
+# Layers Theme
+PRODUCT_COPY_FILES += \
+    vendor/slim/config/permissions/com.layers.theme.xml:system/etc/permissions/com.layers.theme.xml \
+    vendor/slim/prebuilt/common/etc/Layers.apk:system/app/Layers/Layers.apk
+
+# Layers Theme
+PRODUCT_COPY_FILES += \
+    vendor/slim/prebuilt/common/etc/lovejoysVolume.apk:system/app/lovejoysVolume/lovejoysVolume.apk
+ 
+
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     SlimCenter \
@@ -102,6 +112,8 @@ PRODUCT_PACKAGES += \
     mount.exfat \
     fsck.exfat \
     mkfs.exfat
+
+
 
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
@@ -156,7 +168,7 @@ ifdef SLIM_BUILD_EXTRA
     SLIM_POSTFIX := -$(SLIM_BUILD_EXTRA)
 endif
 ifndef SLIM_BUILD_TYPE
-    SLIM_BUILD_TYPE := UNOFFICIAL
+    SLIM_BUILD_TYPE := Slim777
     PLATFORM_VERSION_CODENAME := UNOFFICIAL
     SLIM_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
 endif
